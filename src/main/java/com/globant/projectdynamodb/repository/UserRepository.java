@@ -33,6 +33,7 @@ public class UserRepository {
 
     public void updateUser(User user){
         try{
+            //mapper.save(user, buildDynamoDBSaveExpression(user));
             User entity = getUser(user.getId(), user.getEmail());
             if(entity == null){
                 entity = new User();
@@ -40,7 +41,6 @@ public class UserRepository {
             entity.setName(user.getName());
             entity.setSurname(user.getSurname());
             entity.setEmail(user.getEmail());
-//            mapper.save(user, buildDynamoDBSaveExpression(user));
             mapper.save(user);
         }catch (ConditionalCheckFailedException except){
             LOGGER.error("invalid data - " + except.getMessage());

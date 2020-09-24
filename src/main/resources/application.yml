@@ -1,10 +1,10 @@
 amazon:
   access:
-    key:  mykey
-    secret-key: mysecret
+    key:  AKIARVIKSCAHXPWZVC32
+    secret-key: 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
   region: eu-west-1
   end-point:
-    url:  http://localhost:8000
+    url:  https://dynamodb.eu-west-1.amazonaws.com
 
 server:
   port: 9001
